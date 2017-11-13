@@ -1,0 +1,29 @@
+{
+  "name": "mean-teams",
+  "version": "1.0.0",
+  "description": "Tool to create and organize sports teams",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/felipe503/mean-teams.git"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": ""
+  },
+  "author": "FC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipe503/mean-teams/issues"
+  },
+  "homepage": "https://github.com/felipe503/mean-teams#readme"
+}
