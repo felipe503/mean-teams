@@ -5,20 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": ""
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/felipe503/mean-teams.git"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "^2.8.4",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
-    "passport-jwt": ""
+    "passport-jwt": "^3.0.1"
   },
   "author": "FC",
   "license": "ISC",
