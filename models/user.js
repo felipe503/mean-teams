@@ -47,7 +47,7 @@ module.exports.addUser = function(newUser, callback){
       });
     } else {
       //avoiding doubles register with same email
-      callback(null, user);
+      callback(new Error('Error'));
     }
   });
 }
@@ -72,4 +72,8 @@ module.exports.updateUser = function(updateUser, callback){
     if(err) throw err;
     callback(null, user);
   });
+}
+
+module.exports.getUsersByGroup = function(group,callback){
+
 }

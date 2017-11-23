@@ -19,6 +19,7 @@ mongoose.connection.on('error', (err) => {
 
 const app = express();
 const users = require('./routes/users');
+const groups = require('./routes/groups');
 //server initialisation
 const port = 3030;
 //CORS middleware
@@ -34,7 +35,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
-
+app.use('/groups', groups);
 //Index route
 app.get('/', (req, res, next) => {
   // Handle the get for this route
