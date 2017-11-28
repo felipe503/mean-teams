@@ -8,8 +8,7 @@ const GroupSchema = mongoose.Schema({
     required:true
   },
   users:{
-    type: Array,
-    required: true
+    type: Array
   }
 });
 
@@ -37,3 +36,13 @@ module.exports.getAllGroups = function(callback){
     callback(results);
   });
 }
+
+module.exports.addUsersToGroup = function (group, users, callback) {
+  const query = {name: group.name};
+  const update = {users:group.users};
+  const options = {new: true};
+  Group.findOneAndUpdate(query, update, options,(err, group) => {
+    if(err) throw err;
+    callback(null, group);
+  });
+};

@@ -11,6 +11,8 @@ export class AuthService {
   user: any;
   pathToUsers: String = 'http://localhost:3030/users/';
 
+  pathToGroups: String = 'http://localhost:3030/groups/';
+
   constructor(private http:Http) { }
 
 
@@ -53,9 +55,23 @@ export class AuthService {
   }
 
   logout(){
-    console.log(1)
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+  //groups
+  getAllGroupsAuth(){
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.pathToGroups+'all', {headers: headers})
+      .map(res => res.json());
+  }
+  registerGroup(group){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post( this.pathToGroups+'register', group, {headers: headers})
+      .map(res => res.json());
   }
 }

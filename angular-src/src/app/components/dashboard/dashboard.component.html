@@ -1,2 +1,18 @@
 <h2>Dashboard</h2>
 <p>Welcome to your dashboard.</p>
+<form class="" (submit)="createNewGroup()">
+  <div class="form-group">
+    <label>Create Group
+      <input class="form-control" type="text" [(ngModel)]="name" name="name" placeholder="New group name">
+    </label>
+    <input type="submit" name="createGroup" class="btn btn-primary" value="Create !">
+  </div>
+
+</form>
+<div class="" *ngIf="groups">
+  <h3>Groups existants</h3>
+  <dl *ngFor="let group of groups">
+    <dt>{{group.name}}</dt>
+    <dd *ngIf="group.users"> {{group.users}} <button type="button" name="button">X</button></dd>
+  </dl>
+</div>
